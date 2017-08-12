@@ -95,6 +95,9 @@ textarea {
    ========================================================================== */
 .video-container{
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   video{
     //To cover all the browser
     min-width: 100%;
