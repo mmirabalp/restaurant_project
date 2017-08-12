@@ -95,6 +95,22 @@ textarea {
    ========================================================================== */
 .video-container{
   height: 100%;
+  video{
+    //To cover all the browser
+    min-width: 100%;
+    min-height: 100%;
+
+    // The browser is not alowed to alter the scale
+    width: auto;
+    height: auto;
+
+    // Center the Video
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+           -transform: translate(-50%, -50%);
+  }
 }
 
 
