@@ -13,6 +13,10 @@ html {
     font-size: 1em;
     line-height: 1.4;
 }
+html,body{
+  height: 100%;
+  width: 100%;
+}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -89,7 +93,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+.video-container{
+  height: 100%;
+}
 
 
 
