@@ -9,6 +9,8 @@
 		%meta{charset:"utf-8"}
 		%meta{name: "description", content: "Eat fresh and delicius latin food"}
 		%link{rel:"stylesheet", href:"css/normalize.css"}
+		%link{rel:"stypesheet", href:"css/style.css"}
+		%link{rel:"stylesheet", href:"https://cdn.jsdelivr.net/flexboxgrid/6.3.2/flexboxgrid.min.css"}
 		%meta{name:"viewport", content:"with=devise-with, initial-scale=1"}
 		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
 		%title Latin Restaurant
@@ -24,6 +26,10 @@
 
 		//Video container to show video
 		.video-container
-			%video{autoplay:true, loop:true, width:"1280", height:"720", poster:"/video/images/bbq.jpg"}
+			%video{autoplay:true, loop:true, width:"1440", height:"720", poster:"videos/images/bbq.jpg"}
 				%source{src:"/videos/mp4/bbq.mp4"}
 				%source{src:"/videos/webm/bbq.webm"}
+		.row.full-height
+			.col-xs-12
+				.box
+					%h1 Latin Restaurant
