@@ -83,8 +83,11 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-.no-margin {
-  margin: 0 !important; }
+.white-text {
+  color: white; }
+
+.black {
+  background-color: #222; }
 
 .lobster {
   font-family: 'Dancing Script', cursive; }
@@ -95,15 +98,24 @@ textarea {
 .small {
   font-size: 13px; }
 
-.medium {
+.medium, .navegation li {
   font-size: 1.5em; }
+
+.large-padding {
+  padding: 10px 15px; }
 
 .title {
   font-size: 6em;
   color: white; }
 
+.medium, .navegation li {
+  font-wize: 1.5em; }
+
 .subtitle {
   font-size: 2.5em; }
+
+.fixed {
+  position: fixed; }
 
 .absolute {
   position: absolute; }
@@ -111,14 +123,29 @@ textarea {
 .relative {
   position: relative; }
 
+.top {
+  top: 3em; }
+
+.right {
+  right: 5em; }
+
+.bottom {
+  bottom: 0px; }
+
 .up {
   z-index: 5; }
 
 .full-height {
   height: 100%; }
 
+.full-width {
+  width: 100%; }
+
 .row {
   margin: 0; }
+
+.no-margin {
+  margin: 0 !important; }
 
 /*
  * Hide visually and from screen readers
@@ -287,6 +314,17 @@ h1 {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+
+.navegation li {
+  padding: 5px;
+  transition: all 0.4s; }
+  .navegation li:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
+  .navegation li a {
+    color: white;
+    cursor: pointer; }
+    .navegation li a:hover {
+      text-decoration: none; }
 
 .title-container {
   background: rgba(0, 0, 0, 0.8);

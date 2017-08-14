@@ -11,6 +11,7 @@
 		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 
 		%link{rel:"stylesheet", href:"css/normalize.css"}
+		%link{rel:"stylesheet", href:"css/bootstrap.css"}
 		%link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
 		%link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
 		%link{rel:"stylesheet", href:"css/style.css"}
@@ -35,6 +36,17 @@
 				%source{src:"/videos/webm/bbq.webm"}
 		.row.middle-xs.full-height.center-xs.up.relative.title-container
 			.col-xs-12
-				.box
+				.box.white-text
 					-# %img{src:"/imgs/logo.png", width:200}
-					%h1.white-text.title.lobster.no-margin Latin Restaurant
+					%h1.title.lobster.no-margin Latin Restaurant
+					%p#is-open
+						%i.glyphicon.glyphicon-time
+						Open Now
+			%nav.white-text.fixed.top.navegation.right#navegation
+				-menu = ["Home", "Menu", "Galery", "Contact", "Location"]
+				%ul.list-inline
+					-menu.each do |item|
+						%li
+							%a{}= item
+			.absolute.medium.black.large-padding.white-text.bottom.full-width#description
+				Good Customer Service and nice food

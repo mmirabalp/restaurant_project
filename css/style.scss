@@ -103,11 +103,14 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-.no-margin{
-  margin: 0 !important;
-}
 
  // Typography
+.white-text{
+   color: white;
+}
+.black{
+  background-color: #222;
+}
 .lobster{
   font-family: 'Dancing Script', cursive;
 }
@@ -120,20 +123,38 @@ textarea {
 .medium{
   font-size:1.5em;
 }
+.large-padding{
+  padding: 10px 15px;
+}
 .title{
   font-size:6em;
   color: white;
+}
+.medium{
+  font-wize:1.5em;
 }
 .subtitle{
   font-size:2.5em;
 }
 
 // Utilities
+.fixed{
+  position: fixed;
+}
 .absolute{
   position: absolute;
 }
 .relative{
   position: relative;
+}
+.top{
+  top:3em;
+}
+.right{
+  right:5em;
+}
+.bottom{
+  bottom: 0px;
 }
 .up{
   z-index: 5;
@@ -141,8 +162,14 @@ textarea {
 .full-height{
   height: 100%;
 }
+.full-width{
+  width: 100%;
+}
 .row{
   margin: 0;
+}
+.no-margin{
+  margin: 0 !important;
 }
 
 
@@ -332,30 +359,48 @@ textarea {
     margin: 0;
   }
 
-   .video-container {
-     top: 0;
-     bottom: 0;
-     width: 100%;
-     height: 100%;
-     overflow: hidden;
+ .video-container {
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
 
-     video {
-       /* Make video to at least 100% wide and tall */
-       min-width: 100%;
-       min-height: 100%;
-       /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-       width: auto;
-       height: auto;
-       /* Center the video */
-       position: relative;
-       top: 50%;
-       left: 50%;
-       -webkit-transform: translate(-50%, -50%);
-               transform: translate(-50%, -50%);
+   video {
+     /* Make video to at least 100% wide and tall */
+     min-width: 100%;
+     min-height: 100%;
+     /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+     width: auto;
+     height: auto;
+     /* Center the video */
+     position: relative;
+     top: 50%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+             transform: translate(-50%, -50%);
+
+   }
+   }
+   .navegation{
+     li{
+       @extend .medium;
+       padding: 5px;
+       transition: all 0.4s;
+       &:hover{
+         background-color: rgba(0, 0, 0, 0.20);
+       }
+       a{
+         color: white;
+         cursor: pointer;
+         &:hover{
+           text-decoration: none;
+
+         }
+       }
 
      }
    }
-
 
 
   $color-start: rgba(0,0,0, 0.8);
