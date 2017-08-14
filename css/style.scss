@@ -1,7 +1,9 @@
+@import 'mixins';
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
+ * Kroc Camen, and th
+ e H5BP dev community and team.
  */
 
 /* ==========================================================================
@@ -12,6 +14,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    background-color:#eee;
 }
 html,body{
   height: 100%;
@@ -90,56 +93,62 @@ textarea {
     padding: 0.2em 0;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-.video-container{
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  video{
-    //To cover all the browser
-    min-width: 100%;
-    min-height: 100%;
+.row{
+  margin:0px !important;
 
-    // The browser is not alowed to alter the scale
-    width: auto;
-    height: auto;
-
-    // Center the Video
-    position:absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+.no-margin{
+  margin: 0 !important;
+}
+
+ // Typography
+.lobster{
+  font-family: 'Dancing Script', cursive;
+}
+.slim{
+  font-weight:200;
+}
+.small{
+  font-size:13px;
+}
+.medium{
+  font-size:1.5em;
+}
+.title{
+  font-size:6em;
+  color: white;
+}
+.subtitle{
+  font-size:2.5em;
+}
+
+// Utilities
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.up{
+  z-index: 5;
+}
 .full-height{
   height: 100%;
 }
 .row{
   margin: 0;
 }
+
+
+
+
+
 
 
 /*
@@ -311,3 +320,47 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+
+   .video-container {
+     top: 0;
+     bottom: 0;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+
+     video {
+       /* Make video to at least 100% wide and tall */
+       min-width: 100%;
+       min-height: 100%;
+       /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+       width: auto;
+       height: auto;
+       /* Center the video */
+       position: relative;
+       top: 50%;
+       left: 50%;
+       -webkit-transform: translate(-50%, -50%);
+               transform: translate(-50%, -50%);
+
+     }
+   }
+
+
+
+  $color-start: rgba(0,0,0, 0.8);
+  $color-end: rgba(63, 76, 107, 0.8);
+
+   .title-container{
+     @include gradient-background ($color-start, $color-end);
+   }
