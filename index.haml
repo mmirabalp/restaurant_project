@@ -1,4 +1,4 @@
-!!!5
+ssssss!!!5
 /[if lt IE 7] <html lang="en" class="no-js ie6">
 /[if IE 7 ]    <html lang="en" class="no-js ie7">
 /[if IE 8 ]    <html lang="en" class="no-js ie8">
@@ -30,11 +30,11 @@
 		="<![endif]-->"
 
 		//Video container to show video
-		.video-container.absolute
+		.video-container.absolute.title-container
 			%video{autoplay:true, width:"100%", height:"100%",poster:"/videos/images/bbq.jpg",loop:true}
 				%source{src:"/videos/mp4/bbq.mp4"}
 				%source{src:"/videos/webm/bbq.webm"}
-		.row.middle-xs.full-height.center-xs.up.relative.title-container
+		.row.middle-xs.full-height.center-xs.up.relative
 			.col-xs-12
 				.box.white-text
 					-# %img{src:"/imgs/logo.png", width:200}
@@ -42,11 +42,28 @@
 					%p#is-open
 						%i.glyphicon.glyphicon-time
 						Open Now
-			%nav.white-text.fixed.top.navegation.right#navegation
+			%nav.fixed.top.navegation.right.white-text#navegation
 				-menu = ["Home", "Menu", "Galery", "Contact", "Location"]
 				%ul.list-inline
 					-menu.each do |item|
 						%li
 							%a{}= item
-			.absolute.medium.black.large-padding.white-text.bottom.full-width#description
-				Good Customer Service and nice food
+
+			.absolute.large-padding.white-text.bottom.white-text.full-width#description
+				.row.middle-xs.center-xs
+					.col-xs-7.col-sm-6.white-text.medium.padding
+						Good Customer Service and nice food
+					.col-xs.hidden
+						.box
+							%nav.text-right.navegation
+								%ul.list-inline
+									-menu.each do |item|
+										%li
+											%a{}= item
+				
+	.full-height
+	%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
+	%script
+		window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+	%script{src:"/js/main.js"}
+		

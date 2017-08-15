@@ -1,0 +1,1 @@
+"use strict";!function(){function o(){var o=$("#description"),n=o.height();return $(window).scrollTop()>$(window).height()-n}var n=!1;console.log($(window).height()),$(window).scroll(function(){console.log($(window).scrollTop())})}();

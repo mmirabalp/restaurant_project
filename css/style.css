@@ -26,6 +26,9 @@ html, body {
  *
  * Customize the background color to match your design.
  */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
 ::selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -101,6 +104,9 @@ textarea {
 .medium, .navegation li {
   font-size: 1.5em; }
 
+.padding {
+  padding: 25px; }
+
 .large-padding {
   padding: 10px 15px; }
 
@@ -127,7 +133,7 @@ textarea {
   top: 3em; }
 
 .right {
-  right: 5em; }
+  right: 1em; }
 
 .bottom {
   bottom: 0px; }
@@ -164,6 +170,7 @@ textarea {
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   height: 1px;
   margin: 0;
@@ -182,6 +189,7 @@ textarea {
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
+  -webkit-clip-path: none;
   clip-path: none;
   height: auto;
   margin: 0;
@@ -224,8 +232,10 @@ textarea {
    ========================================================================== */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
-@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -238,56 +248,48 @@ textarea {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster:
-       http://www.sanbeiji.com/archives/953 */
+                                   http://www.sanbeiji.com/archives/953 */
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
     text-shadow: none !important; }
-
   a,
   a:visited {
     text-decoration: underline; }
-
   a[href]:after {
     content: " (" attr(href) ")"; }
-
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-
   /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: ""; }
-
   pre {
     white-space: pre-wrap !important; }
-
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
-
   /*
-   * Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
   thead {
     display: table-header-group; }
-
   tr,
   img {
     page-break-inside: avoid; }
-
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3; }
-
   h2,
   h3 {
     page-break-after: avoid; } }
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -313,10 +315,13 @@ h1 {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
 
 .navegation li {
   padding: 5px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
   transition: all 0.4s; }
   .navegation li:hover {
     background-color: rgba(0, 0, 0, 0.2); }
@@ -333,6 +338,8 @@ h1 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(63, 76, 107, 0.8) 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.8)), to(rgba(63, 76, 107, 0.8)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(63, 76, 107, 0.8) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(63, 76, 107, 0.8) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-start', endColorstr='$color-end',GradientType=1 );
