@@ -80,79 +80,6 @@ textarea {
   color: #000;
   padding: 0.2em 0; }
 
-.row {
-  margin: 0px !important; }
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-.white-text {
-  color: white; }
-
-.black {
-  background-color: #222; }
-
-.lobster {
-  font-family: 'Dancing Script', cursive; }
-
-.slim {
-  font-weight: 200; }
-
-.small {
-  font-size: 13px; }
-
-.medium, .navegation li {
-  font-size: 1.5em; }
-
-.padding {
-  padding: 25px; }
-
-.large-padding {
-  padding: 10px 15px; }
-
-.title {
-  font-size: 6em;
-  color: white; }
-
-.medium, .navegation li {
-  font-wize: 1.5em; }
-
-.subtitle {
-  font-size: 2.5em; }
-
-.fixed {
-  position: fixed; }
-
-.absolute {
-  position: absolute; }
-
-.relative {
-  position: relative; }
-
-.top {
-  top: 3em; }
-
-.right {
-  right: 1em; }
-
-.bottom {
-  bottom: 0px; }
-
-.up {
-  z-index: 5; }
-
-.full-height {
-  height: 100%; }
-
-.full-width {
-  width: 100%; }
-
-.row {
-  margin: 0; }
-
-.no-margin {
-  margin: 0 !important; }
-
 /*
  * Hide visually and from screen readers
  */
@@ -331,6 +258,91 @@ h1 {
     .navegation li a:hover {
       text-decoration: none; }
 
+#description ul {
+  margin: 0px; }
+
+#description.absolute {
+  bottom: 0px; }
+
+#description.fixed {
+  top: 0px; }
+
+/* ==========================================================================
+   Helper classes Start
+   ========================================================================== */
+.display {
+  display: none !important; }
+
+.white-text {
+  color: white; }
+
+.black {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.lobster {
+  font-family: 'Dancing Script', cursive; }
+
+.slim {
+  font-weight: 200; }
+
+.small {
+  font-size: 13px; }
+
+.medium, .navegation li {
+  font-size: 1.5em; }
+
+.large-padding {
+  padding: 10px 15px; }
+
+.title {
+  font-size: 6em;
+  color: white; }
+
+.subtitle {
+  font-size: 1; }
+
+.medium, .navegation li {
+  font-wize: 1.5em; }
+
+.subtitle {
+  font-size: 2.5em; }
+
+.fixed {
+  position: fixed; }
+
+.absolute {
+  position: absolute; }
+
+.relative {
+  position: relative; }
+
+.top {
+  top: 3em; }
+
+.right {
+  right: 1em; }
+
+.bottom {
+  bottom: 0px; }
+
+.up {
+  z-index: 5; }
+
+.full-height {
+  height: 100%; }
+
+.full-width {
+  width: 100%; }
+
+.row {
+  margin: -35px; }
+
+.no-margin {
+  margin: 0 !important; }
+
+/* ==========================================================================
+   Helper classes End
+   ========================================================================== */
 .title-container {
   background: rgba(0, 0, 0, 0.8);
   /* Old browsers */

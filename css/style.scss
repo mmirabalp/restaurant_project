@@ -93,89 +93,10 @@ textarea {
     padding: 0.2em 0;
 }
 
-.row{
-  margin:0px !important;
-
-}
 
 
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
 
- // Typography
-.white-text{
-   color: white;
-}
-.black{
-  background-color: #222;
-}
-.lobster{
-  font-family: 'Dancing Script', cursive;
-}
-.slim{
-  font-weight:200;
-}
-.small{
-  font-size:13px;
-}
-.medium{
-  font-size:1.5em;
-
-}
-.padding{
-  padding: 25px;
-}
-
-.large-padding{
-  padding: 10px 15px;
-}
-.title{
-  font-size:6em;
-  color: white;
-}
-.medium{
-  font-wize:1.5em;
-}
-.subtitle{
-  font-size:2.5em;
-}
-
-// Utilities
-.fixed{
-  position: fixed;
-}
-.absolute{
-  position: absolute;
-}
-.relative{
-  position: relative;
-}
-.top{
-  top:3em;
-}
-.right{
-  right:1em;
-}
-.bottom{
-  bottom: 0px;
-}
-.up{
-  z-index: 5;
-}
-.full-height{
-  height: 100%;
-}
-.full-width{
-  width: 100%;
-}
-.row{
-  margin: 0;
-}
-.no-margin{
-  margin: 0 !important;
-}
 
 
 
@@ -406,6 +327,108 @@ textarea {
 
      }
    }
+
+   #description{
+      ul{
+        margin: 0px;
+      }
+
+      &.absolute{
+        bottom: 0px;
+
+      }
+
+      &.fixed{
+        top: 0px;
+
+      }
+   }
+
+/* ==========================================================================
+   Helper classes Start
+   ========================================================================== */
+.display{
+  display:none !important;
+}
+ // Typography
+.white-text{
+   color: white;
+}
+.black{
+  background-color: rgba(0, 0, 0, 0.30);
+}
+.lobster{
+  font-family: 'Dancing Script', cursive;
+}
+.slim{
+  font-weight:200;
+}
+.small{
+  font-size:13px;
+}
+.medium{
+  font-size:1.5em;
+
+}
+
+
+.large-padding{
+  padding: 10px 15px;
+}
+.title{
+  font-size:6em;
+  color: white;
+}
+
+.subtitle{
+  font-size: 1;
+}
+
+.medium{
+  font-wize:1.5em;
+}
+.subtitle{
+  font-size:2.5em;
+}
+
+// Utilities
+.fixed{
+  position: fixed;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.top{
+  top:3em;
+}
+.right{
+  right:1em;
+}
+.bottom{
+  bottom: 0px;
+}
+.up{
+  z-index: 5;
+}
+.full-height{
+  height: 100%;
+}
+.full-width{
+  width: 100%;
+}
+.row{
+  margin: -35px;
+}
+.no-margin{
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   Helper classes End
+   ========================================================================== */
 
 
   $color-start: rgba(0,0,0, 0.8);

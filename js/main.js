@@ -1,9 +1,13 @@
 ;(function(){
 	let sticky = false
-	console.log($(window).height());
+	// console.log($(window).height());
 
-	$(window).scroll(function(){
-		console.log(isInBottom());
+	$("#sticky-navegation").removeClass("hidden")
+	$("#stick-navegation").slideUp()
+
+
+	$(window).scroll(()=>{
+		// console.log(isInBottom());
 		const inBottom = isInBottom();
 
 		if(inBottom && !sticky){
@@ -17,16 +21,23 @@
 			// Hide Navegation
 			console.log('Return Navegation');
 			sticky = false;
-			unstickNavegation()
+			unStickNavegation();
 
 		}
 	})
 
 	function stickNavegation(){
+		$("#description").addClass("fixed").removeClass('absolute')
+		$("#navegation").slideUp()
+		$("#sticky-navegation").slideDown()
 
+	
 	}
-	function unstickNavegation(){
-		
+	function unStickNavegation(){
+		$("#description").removeClass('fixed').addClass('absolute')
+		$("#navegation").slideUp('hidden')
+		$("#sticky-navegation").slideDown("hidden")
+
 	}
 
 	function isInBottom(){

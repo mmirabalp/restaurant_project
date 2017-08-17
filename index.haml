@@ -34,7 +34,7 @@ ssssss!!!5
 			%video{autoplay:true, width:"100%", height:"100%",poster:"/videos/images/bbq.jpg",loop:true}
 				%source{src:"/videos/mp4/bbq.mp4"}
 				%source{src:"/videos/webm/bbq.webm"}
-		.row.middle-xs.full-height.center-xs.up.relative
+		.row.middle-xs.full-height.center-xs.up.relative#home
 			.col-xs-12
 				.box.white-text
 					-# %img{src:"/imgs/logo.png", width:200}
@@ -49,11 +49,11 @@ ssssss!!!5
 						%li
 							%a{}= item
 
-			.absolute.large-padding.white-text.bottom.white-text.full-width#description
-				.row.middle-xs.center-xs
-					.col-xs-7.col-sm-6.white-text.medium.padding
-						Good Customer Service and nice food
-					.col-xs.hidden
+			.absolute.large-padding.white-text.full-width#description
+				.row.middle-xs.center-xs.medium
+					.col-xs-7.col-sm-6.white-text.absolute
+						Good Customer Service and Delicious Food
+					.col-xs.hidden#sticky-navegation.invisible
 						.box
 							%nav.text-right.navegation
 								%ul.list-inline
@@ -62,8 +62,14 @@ ssssss!!!5
 											%a{}= item
 				
 	.full-height
+		-menu_photos = [ {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Hamburger", pricing:"10.00", image: "hamburger"}, {name:"Hot Cakes", pricing:"12.00", image: "hot-cakes"}, {name:"Panini", pricing:"10.00", image: "panini"}, {name:"French Frys", pricing:"12.00", image: "papas"}, {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"} ]
+		.row
+			-menu_photos.each do |photo|
+				.col-md-4.col-lg-3.col-sm-6.col-xs-12.food
+					%img{src:"/imgs/food/#{photo[:image]}-thumb.jpg"}
+
+
 	%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
 	%script
 		window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
 	%script{src:"/js/main.js"}
-		
