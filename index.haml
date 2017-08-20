@@ -65,8 +65,9 @@ ssssss!!!5
 		-menu_photos = [ {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Hamburger", pricing:"10.00", image: "hamburger"}, {name:"Hot Cakes", pricing:"12.00", image: "hot-cakes"}, {name:"Panini", pricing:"10.00", image: "panini"}, {name:"French Frys", pricing:"12.00", image: "papas"}, {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"} ]
 		.row
 			-menu_photos.each do |photo|
-				.col-md-4.col-lg-3.col-sm-6.col-xs-12.food
-					%img{src:"/imgs/food/#{photo[:image]}-thumb.jpg"}
+				.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(/imgs/food/#{photo[:image]}-thumb.jpg)"}
+					
+				
 
 
 	%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
