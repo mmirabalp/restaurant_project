@@ -290,6 +290,20 @@ h1 {
   left: calc(50% - 150px);
   top: calc(50% + 18em); }
 
+#gallery {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%; }
+  #gallery .inner {
+    white-space: nowrap; }
+  #gallery .image {
+    display: inline-block;
+    margin-right: -4px;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center; }
+
 /* ==========================================================================
    Helper classes Start
    ========================================================================== */

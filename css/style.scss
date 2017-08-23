@@ -370,9 +370,25 @@ textarea {
     z-index: 100;
     left: calc(50% - 150px);
     top: calc(50% + 18em);
-
-  
    }
+   #gallery{
+    width:100%;
+    overflow-x: hidden;
+    .inner{
+      white-space:nowrap;
+    }
+    height: 100%;
+    .image{
+      display: inline-block;
+      margin-right: -4px;
+      height: 100vh;
+      width: 100%;
+      background-size:cover;
+      background-position:center;
+      
+    }
+   }
+
 
 
 /* ==========================================================================
