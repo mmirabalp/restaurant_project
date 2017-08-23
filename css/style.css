@@ -246,10 +246,9 @@ h1 {
     transform: translate(-50%, -50%); }
 
 .navegation li {
-  padding: 5px;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s; }
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
   .navegation li:hover {
     background-color: rgba(0, 0, 0, 0.2); }
   .navegation li a {
@@ -268,13 +267,37 @@ h1 {
   top: 0px; }
 
 .food {
-  height: 300px; }
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  padding: 0%;
+  overflow: hidden; }
+  .food:hover .screen {
+    top: 0%; }
+  .food .screen {
+    top: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    -webkit-transition: top 2s;
+    -o-transition: top 2s;
+    transition: top 2s; }
+
+#menu-title {
+  width: 300px;
+  z-index: 100;
+  left: calc(50% - 150px);
+  top: calc(50% + 18em); }
 
 /* ==========================================================================
    Helper classes Start
    ========================================================================== */
 .display {
   display: none !important; }
+
+.white {
+  background-color: rgba(0, 0, 0, 0.4); }
 
 .white-text {
   color: white; }
@@ -298,14 +321,14 @@ h1 {
   padding: 10px 15px; }
 
 .title {
-  font-size: 6em;
+  font-size: 4em;
   color: white; }
 
 .subtitle {
-  font-size: 1; }
+  font-size: 2.5em; }
 
 .medium, .navegation li {
-  font-wize: 1.5em; }
+  font-size: 1.5em; }
 
 .subtitle {
   font-size: 2.5em; }
@@ -329,7 +352,7 @@ h1 {
   bottom: 0px; }
 
 .up {
-  z-index: 5; }
+  z-index: 10; }
 
 .full-height {
   height: 100%; }
@@ -338,7 +361,8 @@ h1 {
   width: 100%; }
 
 .row {
-  margin: -35px; }
+  margin: -10.7px;
+  padding-bottom: 20px; }
 
 .no-margin {
   margin: 0 !important; }

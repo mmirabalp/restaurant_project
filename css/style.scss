@@ -311,8 +311,8 @@ textarea {
    .navegation{
      li{
        @extend .medium;
-       padding: 5px;
-       transition: all 0.4s;
+       // padding: 5px;
+       transition: all 0.5s;
        &:hover{
          background-color: rgba(0, 0, 0, 0.20);
        }
@@ -346,7 +346,34 @@ textarea {
 
    .food{
       height: 300px;
+      background-size: cover;
+      background-position: center;
+      padding: 0%;
+      overflow: hidden;
+      &:hover{
+        .screen{
+          top:0%;
+        }
+      }
+      .screen{
+        top: 100%;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.7);
+        height: 100%;
+        width: 100%;
+        transition: top 2s;
+ 
+      }
    }
+   #menu-title{
+    width: 300px;
+    z-index: 100;
+    left: calc(50% - 150px);
+    top: calc(50% + 18em);
+
+  
+   }
+
 
 /* ==========================================================================
    Helper classes Start
@@ -354,6 +381,10 @@ textarea {
 .display{
   display:none !important;
 }
+.white{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
  // Typography
 .white-text{
    color: white;
@@ -380,16 +411,16 @@ textarea {
   padding: 10px 15px;
 }
 .title{
-  font-size:6em;
+  font-size:4em;
   color: white;
 }
 
 .subtitle{
-  font-size: 1;
+  font-size: 2.5em;
 }
 
 .medium{
-  font-wize:1.5em;
+  font-size:1.5em;
 }
 .subtitle{
   font-size:2.5em;
@@ -415,16 +446,18 @@ textarea {
   bottom: 0px;
 }
 .up{
-  z-index: 5;
+  z-index: 10;
 }
 .full-height{
   height: 100%;
 }
+
 .full-width{
   width: 100%;
 }
 .row{
-  margin: -35px;
+  margin: -10.7px;
+  padding-bottom: 20px;
 }
 .no-margin{
   margin: 0 !important;
