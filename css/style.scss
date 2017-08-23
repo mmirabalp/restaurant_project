@@ -376,6 +376,9 @@ textarea {
     overflow-x: hidden;
     .inner{
       white-space:nowrap;
+      position: relative;
+      left: 0%;
+      transition: left 3s;
     }
     height: 100%;
     .image{
@@ -385,7 +388,7 @@ textarea {
       width: 100%;
       background-size:cover;
       background-position:center;
-      
+
     }
    }
 

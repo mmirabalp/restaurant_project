@@ -295,7 +295,12 @@ h1 {
   overflow-x: hidden;
   height: 100%; }
   #gallery .inner {
-    white-space: nowrap; }
+    white-space: nowrap;
+    position: relative;
+    left: 0%;
+    -webkit-transition: left 3s;
+    -o-transition: left 3s;
+    transition: left 3s; }
   #gallery .image {
     display: inline-block;
     margin-right: -4px;

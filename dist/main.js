@@ -2,10 +2,21 @@
 
 ;(function () {
 	var sticky = false;
+	var currentPosition = 0;
 	// console.log($(window).height());
 
 	$("#sticky-navegation").removeClass("hidden");
 	$("#stick-navegation").slideUp();
+
+	setInterval(function () {
+		// Todo...
+		console.log('test');
+
+		currentPosition++;
+		$("#gallery .inner").css({
+			left: "-" + currentPosition * 100 + "%"
+		});
+	}, 3000);
 
 	$(window).scroll(function () {
 		// console.log(isInBottom());
