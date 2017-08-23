@@ -1,3 +1,5 @@
+-gallery_images = [ "club-sandwich.jpg", "papas.jpg", "hamburger.jpg", "panini.jpg", "club-sandwich.jpg", "papas.jpg"]
+
 !!!5
 /[if lt IE 7] <html lang="en" class="no-js ie6">
 /[if IE 7 ]    <html lang="en" class="no-js ie7">
@@ -75,6 +77,11 @@
 							.col-xs-12
 								%h3.lobster.white-text.subtitle= photo[:name]
 								%p.no-margin.white-text= photo[:pricing] + "USD"
+	#gallery
+		-gallery_images.each do |image|
+			.image{style:"background-image:url(imgs/food/#{image}); height:200px;"}
+
+
 
 					
 				
