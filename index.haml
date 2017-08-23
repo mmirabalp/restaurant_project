@@ -1,4 +1,4 @@
--gallery_images = [ "club-sandwich.jpg", "papas.jpg", "hamburger.jpg", "panini.jpg", "club-sandwich.jpg", "papas.jpg"]
+-gallery_images = [ "club-sandwich.jpg", "papas.jpg", "hamburger.jpg"]
 
 !!!5
 /[if lt IE 7] <html lang="en" class="no-js ie6">
@@ -11,6 +11,7 @@
 		%meta{charset:"utf-8"}
 		%meta{name: "description", content: "Eat fresh and delicius latin food"}
 		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+		%meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
 
 		%link{rel:"stylesheet", href:"css/normalize.css"}
 		%link{rel:"stylesheet", href:"css/bootstrap.css"}

@@ -3,7 +3,9 @@
 ;(function () {
 	var sticky = false;
 	var currentPosition = 0;
+	var imageCounter = $("[data-name='image-counter']").attr("content"
 	// console.log($(window).height());
+	);console.log(imageCounter);
 
 	$("#sticky-navegation").removeClass("hidden");
 	$("#stick-navegation").slideUp();
@@ -12,7 +14,12 @@
 		// Todo...
 		console.log('test');
 
-		currentPosition++;
+		if (currentPosition < imageCounter) {
+			currentPosition++;
+		} else {
+			currentPosition = 0;
+		}
+
 		$("#gallery .inner").css({
 			left: "-" + currentPosition * 100 + "%"
 		});

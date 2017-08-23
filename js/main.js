@@ -1,7 +1,9 @@
 ;(function(){
 	let sticky = false
 	let currentPosition = 0;
+	const imageCounter = $("[data-name='image-counter']").attr("content")
 	// console.log($(window).height());
+	console.log(imageCounter);
 
 	$("#sticky-navegation").removeClass("hidden")
 	$("#stick-navegation").slideUp()
@@ -10,7 +12,13 @@
 	  // Todo...
 	  console.log('test');
 
-	  currentPosition++;
+	  if(currentPosition < imageCounter){
+	  	currentPosition++;
+	  }else{
+	  	currentPosition = 0;
+	  }
+
+	  
 	  $("#gallery .inner").css({
 	  	left: "-" + currentPosition*100 + "%"
 	  })
