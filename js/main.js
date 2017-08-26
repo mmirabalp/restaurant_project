@@ -1,9 +1,19 @@
 ;(function(){
 	let sticky = false
 	let currentPosition = 0;
+	
 	const imageCounter = $("[data-name='image-counter']").attr("content")
+	const email = "mmirabalp@gmail.com"
+
+	$("#contact_form").on('submit', function(event){
+		event.preventDefault();
+		sendForm($(this));
+
+		return false
+	})
+
 	// console.log($(window).height());
-	console.log(imageCounter);
+	// console.log(imageCounter);
 
 	$("#sticky-navegation").removeClass("hidden")
 	$("#stick-navegation").slideUp()
@@ -62,6 +72,23 @@
 		const $description = $("#description")
 		const descriptionHeight = $description.height()
 		return $(window).scrollTop() > $(window).height() - (descriptionHeight) * 1.5
+	}
+
+
+	function sendForm($form){
+
+		// console.log($form.formObject());
+		
+		$.ajax({
+		    // url: "https://formspree.io/mmirabalp@gmail.com", 
+		    url: $form.attr("action"), 
+		    method: "POST",
+		    data: $form.formObject(),
+		    dataType: "json",
+		    success: function(){
+		    	alert("All was Succesful");
+		    }
+		})
 	}
 
 })()

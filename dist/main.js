@@ -3,11 +3,21 @@
 ;(function () {
 	var sticky = false;
 	var currentPosition = 0;
-	var imageCounter = $("[data-name='image-counter']").attr("content"
-	// console.log($(window).height());
-	);console.log(imageCounter);
 
-	$("#sticky-navegation").removeClass("hidden");
+	var imageCounter = $("[data-name='image-counter']").attr("content");
+	var email = "mmirabalp@gmail.com";
+
+	$("#contact_form").on('submit', function (event) {
+		event.preventDefault();
+		sendForm($(this));
+
+		return false;
+	}
+
+	// console.log($(window).height());
+	// console.log(imageCounter);
+
+	);$("#sticky-navegation").removeClass("hidden");
 	$("#stick-navegation").slideUp();
 
 	setInterval(function () {
@@ -58,5 +68,21 @@
 		var $description = $("#description");
 		var descriptionHeight = $description.height();
 		return $(window).scrollTop() > $(window).height() - descriptionHeight * 1.5;
+	}
+
+	function sendForm($form) {
+
+		// console.log($form.formObject());
+
+		$.ajax({
+			// url: "https://formspree.io/mmirabalp@gmail.com", 
+			url: $form.attr("action"),
+			method: "POST",
+			data: $form.formObject(),
+			dataType: "json",
+			success: function success() {
+				alert("All was Succesful");
+			}
+		});
 	}
 })();
