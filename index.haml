@@ -64,9 +64,9 @@
 										%li
 											%a{}= item
 				
-	.full-height
+	.full-height.top-space
 		.text-center.relative#menu
-			.absolute.white#menu-title
+			.absolute.up.white-text.black-background#menu-title
 				%h2.lobster.title Menu
 
 		-menu_photos = [ {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Hamburger", pricing:"10.00", image: "hamburger"}, {name:"Hot Cakes", pricing:"12.00", image: "hot-cakes"}, {name:"Panini", pricing:"10.00", image: "panini"}, {name:"French Frys", pricing:"12.00", image: "papas"}, {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"} ]
@@ -78,12 +78,42 @@
 							.col-xs-12
 								%h3.lobster.white-text.subtitle= photo[:name]
 								%p.no-margin.white-text= photo[:pricing] + "USD"
-	#gallery
-		.inner
-			-gallery_images.each do |image|
-				.image{style:"background-image:url(imgs/food/#{image});"}
+	.full-height
+		#gallery
+			.inner
+				-gallery_images.each do |image|
+					.image{style:"background-image:url(imgs/food/#{image});"}
+			.containter
+			.card.black-background.white-text.text-center.relative
+				%h3.medium.slim
+					Here at
+					%strong.lobster.medium Latin Restaurant,
+					The Secret is  
+					%strong.lobster.medium at the table. 
+				%p
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				%strong.lobster.medium Mawel - Chef
 
+	.black.white-text.full-height#contact
+		.row.middle-xs.full-height
+			.col-xs-12
+				.box
+					%form{action:"https://formspree.io/mmirabalp@gmail.com", method:"POST"}
+						.row.center-xs.middle-xs
+							.col-xs-2.col-md-1
+								.box
+							.col-xs-5
+								.box.white-text
+									%input{type:"email", name:"email",placeholder:"Type your email"}
+									%input{type:"text", name:"text",placeholder:"Type your name"}
+									%textarea{name:"body",placeholder:"Type your message"}
 
+									%button.black-text{type:"submit", class:"btn btn-success"}Submit
 
 					
 				

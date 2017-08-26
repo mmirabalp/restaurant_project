@@ -315,14 +315,22 @@ h1 {
 .display {
   display: none !important; }
 
-.white {
-  background-color: rgba(0, 0, 0, 0.4); }
+.black-background {
+  background-color: rgba(26, 26, 26, 0.78); }
 
 .white-text {
   color: white; }
 
+.black-text {
+  color: rgba(26, 26, 26, 0.78); }
+
+.card {
+  -webkit-box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px black;
+  margin-bottom: 400px; }
+
 .black {
-  background-color: rgba(0, 0, 0, 0.3); }
+  background-color: black; }
 
 .lobster {
   font-family: 'Dancing Script', cursive; }
@@ -385,6 +393,22 @@ h1 {
 
 .no-margin {
   margin: 0 !important; }
+
+.container .card {
+  margin-top: -200px;
+  padding: 2em; }
+
+#contact {
+  margin-top: -200px; }
+
+input, textarea {
+  font-size: 2em;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px #eee;
+  background-color: transparent;
+  width: 100%; }
 
 /* ==========================================================================
    Helper classes End
