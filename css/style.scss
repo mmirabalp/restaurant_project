@@ -277,6 +277,8 @@ textarea {
 
 
 
+
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -391,6 +393,19 @@ textarea {
 
     }
    }
+    .container{
+      .card{
+        margin-top: -200px;
+        padding: 2em;
+      }
+    }
+
+    .step-form{
+      .step{
+        max-height: 0px;
+        overflow: hidden;
+      }
+    }
 
 
 
@@ -488,12 +503,7 @@ textarea {
 .no-margin{
   margin: 0 !important;
 }
-.container{
-  .card{
-    margin-top: -200px;
-    padding: 2em;
-  }
-}
+
 
 #contact{
   margin-top: -200px;

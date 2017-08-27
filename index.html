@@ -216,17 +216,23 @@
     <div class="row middle-xs full-height">
       <div class="col-xs-12">
         <div class="box">
-          <form action="https://formspree.io/mmirabalp@gmail.com" id="contact_form" method="POST">
+          <form action="https://formspree.io/mmirabalp@gmail.com" class="step-form" id="contact_form" method="POST">
             <div class="row center-xs middle-xs">
               <div class="col-xs-2 col-md-1">
                 <div class="box"></div>
               </div>
               <div class="col-xs-5">
                 <div class="box white-text">
-                  <input class="input" name="email" placeholder="Type your email" type="email">
-                  <input class="input" name="text" placeholder="Type your name" type="text">
-                  <textarea class="input" name="body" placeholder="Type your message"></textarea>
-                  <button class="black-text btn btn-success" type="submit">Submit</button>
+                  <fieldset class="step">
+                    <input class="input" name="email" placeholder="Type your email" type="email">
+                  </fieldset>
+                  <fieldset class="step">
+                    <input class="input" name="text" placeholder="Type your name" type="text">
+                  </fieldset>
+                  <fieldset class="step">
+                    <textarea class="input" name="body" placeholder="Type your message"></textarea>
+                    <button class="black-text btn btn-success" type="submit">Submit</button>
+                  </fieldset>
                 </div>
               </div>
             </div>

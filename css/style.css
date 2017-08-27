@@ -309,6 +309,14 @@ h1 {
     background-size: cover;
     background-position: center; }
 
+.container .card {
+  margin-top: -200px;
+  padding: 2em; }
+
+.step-form .step {
+  max-height: 0px;
+  overflow: hidden; }
+
 /* ==========================================================================
    Helper classes Start
    ========================================================================== */
@@ -393,10 +401,6 @@ h1 {
 
 .no-margin {
   margin: 0 !important; }
-
-.container .card {
-  margin-top: -200px;
-  padding: 2em; }
 
 #contact {
   margin-top: -200px; }
