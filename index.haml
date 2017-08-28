@@ -104,17 +104,25 @@
 			.col-xs-12
 				.box
 					%form{action:"https://formspree.io/mmirabalp@gmail.com", method:"POST", id:"contact_form", class:"step-form"}
-						.row.center-xs.middle-xs
-							.col-xs-2.col-md-1
+						.row.center-xs
+							.col-xs-2.col-md-1.text-center
 								.box
+									-3.times do |i|
+										
+										-if i == 0
+											.path-step.active
+										-else
+											.path-step
+										%br
+											
 							.col-xs-5
 								.box.white-text
+									%fieldset.step.active
+										%input{type:"email", name:"email",placeholder:"Type your email", class:"input", required: true}
 									%fieldset.step
-										%input{type:"email", name:"email",placeholder:"Type your email", class:"input"}
-									%fieldset.step
-										%input{type:"text", name:"text",placeholder:"Type your name", class:"input"}
+										%input{type:"text", name:"text",placeholder:"Type your name", class:"input", required: true}
 									%fieldset.step	
-										%textarea{name:"body",placeholder:"Type your message", class:"input"}
+										%textarea{name:"body",placeholder:"Type your message", class:"input", required: true}
 
 										%button.black-text{type:"submit", class:"btn btn-success"}Submit
 
