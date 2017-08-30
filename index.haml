@@ -5,7 +5,8 @@
 /[if IE 7 ]    <html lang="en" class="no-js ie7">
 /[if IE 8 ]    <html lang="en" class="no-js ie8">
 /[if IE 9 ]    <html lang="en" class="no-js ie9">
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" 
+class="no-js"> <!--<![endif]-->
 %html{class:"no-js", lang:"en"}
 	%head
 		%meta{charset:"utf-8"}
@@ -64,6 +65,7 @@
 										%li
 											%a{}= item
 				
+
 	.full-height.top-space
 		.text-center.relative#menu
 			.absolute.up.white-text.black-background#menu-title
@@ -124,17 +126,19 @@
 										%textarea{name:"body",placeholder:"Message", class:"input", required: true}
 
 										%button.black-text{type:"submit", class:"btn btn-success"}Submit
-
+										
+	#location
+		#map
 					
-				
-
 
 	%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
 	%script
 		window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
-	%script{src:"/js/form_object.js"}
-	%script{src:"/js/main.js"}
-	%script{src:"/dist/step.js"}
+	%script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyD-a47QLCgZY9RrF0Dz0BiloT7NA1XvVoM"}
+	%script{src:"dist/maps.js"}
+	%script{src:"dist/form_object.js"}
+	%script{src:"dist/main.js"}
+	%script{src:"dist/step.js"}
 
 
 

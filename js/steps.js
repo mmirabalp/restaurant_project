@@ -11,8 +11,8 @@
 			event.preventDefault()
 			$(event.target).blur();
 		}
-
 	})
+
 
 	$(".path-step").on("click", function(event){
 		var $current_circle = $(event.target)

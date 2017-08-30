@@ -3,7 +3,8 @@
 <!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"
+class="no-js"> <!--<![endif]-->
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
@@ -249,11 +250,16 @@
       </div>
     </div>
   </div>
+  <div id="location">
+    <div id="map"></div>
+  </div>
   <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script>
     window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
   </script>
-  <script src="/js/form_object.js"></script>
-  <script src="/js/main.js"></script>
-  <script src="/dist/step.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-a47QLCgZY9RrF0Dz0BiloT7NA1XvVoM"></script>
+  <script src="dist/maps.js"></script>
+  <script src="dist/form_object.js"></script>
+  <script src="dist/main.js"></script>
+  <script src="dist/step.js"></script>
 </html>
