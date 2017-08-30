@@ -103,26 +103,25 @@
 		.row.middle-xs.full-height
 			.col-xs-12
 				.box
+					%p.text-center.medium#info-contact Press Enter to fill up the form and send us an email...Thank You
 					%form{action:"https://formspree.io/mmirabalp@gmail.com", method:"POST", id:"contact_form", class:"step-form"}
 						.row.center-xs
 							.col-xs-2.col-md-1.text-center
 								.box
-									-3.times do |i|
-										
+									-3.times do |i|	
 										-if i == 0
 											.path-step.active
 										-else
 											.path-step
-										%br
-											
+										%br					
 							.col-xs-5
 								.box.white-text
 									%fieldset.step.active
-										%input{type:"email", name:"email",placeholder:"Type your email", class:"input", required: true}
+										%input{type:"email", name:"email",placeholder:"Email", class:"input", required: true}
 									%fieldset.step
-										%input{type:"text", name:"text",placeholder:"Type your name", class:"input", required: true}
+										%input{type:"text", name:"text",placeholder:"Name", class:"input", required: true}
 									%fieldset.step	
-										%textarea{name:"body",placeholder:"Type your message", class:"input", required: true}
+										%textarea{name:"body",placeholder:"Message", class:"input", required: true}
 
 										%button.black-text{type:"submit", class:"btn btn-success"}Submit
 

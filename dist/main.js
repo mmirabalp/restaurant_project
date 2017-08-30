@@ -69,20 +69,4 @@
 		var descriptionHeight = $description.height();
 		return $(window).scrollTop() > $(window).height() - descriptionHeight * 1.5;
 	}
-
-	function sendForm($form) {
-
-		// console.log($form.formObject());
-
-		$.ajax({
-			// url: "https://formspree.io/mmirabalp@gmail.com", 
-			url: $form.attr("action"),
-			method: "POST",
-			data: $form.formObject(),
-			dataType: "json",
-			success: function success() {
-				alert("All was Succesful");
-			}
-		});
-	}
 })();

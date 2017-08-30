@@ -6,6 +6,14 @@
 
 	var selector = "#contact_form"
 
+	$(".step textarea").on("keydown", function(event){
+		if(event.keyCode == 13){
+			event.preventDefault()
+			$(event.target).blur();
+		}
+
+	})
+
 	$(".path-step").on("click", function(event){
 		var $current_circle = $(event.target)
 
@@ -34,8 +42,9 @@
 		var $next_step = $input.parent().next(".step")
 		form_newStep_focus($next_step)
 
+		var is_validForm = form_is_valid();
 
-		if($next_step.length > 0){
+		if(!is_validForm && $next_step.length > 0){
 			form_newStep_focus($next_step)
 			console.log(' form is  valid')
 
@@ -53,7 +62,7 @@
 	function form_validator(){
 
 		if(form_is_valid()){
-
+			sendForm()
 		}else{
 			var $fieldset_invalid = $(selector).find(".input:invalid").first().parent()
 			form_newStep_focus($fieldset_invalid)
@@ -63,6 +72,8 @@
 	}
 
 	function form_is_valid(){
+
+		console.log(document.querySelector(selector).checkValidity());
 		return document.querySelector(selector).checkValidity()
 
 	}
@@ -103,6 +114,24 @@
 
 	}
 
+
+	function sendForm(){
+		var $form = $(selector)
+
+		// console.log($form.formObject());
+		$.ajax({
+		    // url: "https://formspree.io/mmirabalp@gmail.com", 
+		    url: $form.attr("action"), 
+		    method: "POST",
+		    data: $form.formObject(),
+		    dataType: "json",
+		    success: function(){
+		    	// alert("All was Succesful");
+		    	$form.slideUp(400)
+		    	$("#info-contact").html("Your mail is on the way, we will contact you soon")
+		    }
+		})
+	}
 
 
 })()

@@ -75,20 +75,6 @@
 	}
 
 
-	function sendForm($form){
 
-		// console.log($form.formObject());
-		
-		$.ajax({
-		    // url: "https://formspree.io/mmirabalp@gmail.com", 
-		    url: $form.attr("action"), 
-		    method: "POST",
-		    data: $form.formObject(),
-		    dataType: "json",
-		    success: function(){
-		    	alert("All was Succesful");
-		    }
-		})
-	}
 
 })()

@@ -1,28 +1,42 @@
 !function() {
     function t() {
-        n() || e($(a).find(".input:invalid").first().parent());
+        e() ? a() : n($(i).find(".input:invalid").first().parent());
     }
-    function n() {
-        return document.querySelector(a).checkValidity();
+    function e() {
+        return console.log(document.querySelector(i).checkValidity()), document.querySelector(i).checkValidity();
     }
-    function e(t) {
+    function n(t) {
         $(".step.active").removeClass("active"), t.addClass("active"), t.find(".input").focus();
-        var n = 2 * t.index(".step") + 1;
-        i($(".path-step:nth-child(" + n + ")"));
+        var e = 2 * t.index(".step") + 1;
+        o($(".path-step:nth-child(" + e + ")"));
     }
-    function i(t) {
+    function o(t) {
         $(".path-step.active").removeClass("active"), t.addClass("active");
     }
+    function a() {
+        var t = $(i);
+        $.ajax({
+            url: t.attr("action"),
+            method: "POST",
+            data: t.formObject(),
+            dataType: "json",
+            success: function() {
+                t.slideUp(400), $("#info-contact").html("Your mail is on the way, we will contact you soon");
+            }
+        });
+    }
     console.log($(".step.active").index());
-    var a = "#contact_form";
-    $(".path-step").on("click", function(t) {
-        var n = $(t.target);
-        i(n);
-        var a = n.index(".path-step") + 1;
-        e($(".step:nth-child(" + a + ")"));
-    }), $(a).find(".input").on("change", function(n) {
-        var i = $(n.target).parent().next(".step");
-        e(i), i.length > 0 ? (e(i), console.log(" form is  valid")) : (console.log("Error form is not valid"), 
+    var i = "#contact_form";
+    $(".step textarea").on("keydown", function(t) {
+        13 == t.keyCode && (t.preventDefault(), $(t.target).blur());
+    }), $(".path-step").on("click", function(t) {
+        var e = $(t.target);
+        o(e);
+        var a = e.index(".path-step") + 1;
+        n($(".step:nth-child(" + a + ")"));
+    }), $(i).find(".input").on("change", function(o) {
+        var a = $(o.target).parent().next(".step");
+        n(a), !e() && a.length > 0 ? (n(a), console.log(" form is  valid")) : (console.log("Error form is not valid"), 
         t());
     });
 }();
