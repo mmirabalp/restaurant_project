@@ -28,11 +28,8 @@
 	}
 
 var my_place = {
-
 						lat: 36.159537,
-						lng: -115.208751
-					
-
+						lng: -115.208751				
 }
 
 	google.maps.event.addDomListener(window,"load",function(){
@@ -44,6 +41,14 @@ var my_place = {
 				}
 
 			)
+
+		var marker =  new google.maps.Marker({
+			map: map,
+			position: my_place,
+			title: "Latin Restaurant",
+			visible: true
+		})
+
 		UserLocation.get(function(coords){
 			console.log(coords);
 			alert("I got User coordenate")
@@ -53,19 +58,19 @@ var my_place = {
 			var destiny = new google.maps.LatLng(my_place.lat, my_place.lng)
 
 			var service = new google.maps.DistanceMatrixService()
+
 			service.getDistanceMatrix({
 				origins: [origin],
 				destinations: [destiny],
 				travelMode: google.maps.TravelMode.DRIVING
 
-
 			},function(response, status){
 				if(status === google.maps.DistanceMatrixStatus.OK){
 					var duration_element = response.rows[0].elements[0]
 					var duration_trip = duration_element.duration.text
-
-					console.log(duration_trip);
-					console.log(duration_element);
+					document.querySelector("#message").innerHTML= 'Time to arrive at restaurant is: ' + duration_trip
+					
+					// console.log(duration_element);
 				}
 
 			})
