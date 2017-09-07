@@ -1,5 +1,9 @@
 "use strict";
 
+if (navigator.serviceWorker) {
+	navigator.serviceWorker.register("/sw.js");
+}
+
 ;(function () {
 	var sticky = false;
 	var currentPosition = 0;
@@ -12,16 +16,15 @@
 		sendForm($(this));
 
 		return false;
-	}
+	});
 
 	// console.log($(window).height());
-	// console.log(imageCounter);
+	console.log("imageCounter: " + imageCounter);
 
-	);$("#sticky-navegation").removeClass("hidden");
-	$("#stick-navegation").slideUp();
+	$("#sticky-navigation").removeClass("hidden");
+	$("#stick-navegation").slideUp(0);
 
 	setInterval(function () {
-		// Todo...
 		console.log('test');
 
 		if (currentPosition < imageCounter) {
@@ -37,36 +40,50 @@
 
 	$(window).scroll(function () {
 		// console.log(isInBottom());
+
+		console.log("$(window).scrollTop()" + $(window).scrollTop());
+		console.log("$(window).height()" + $(window).height());
+
 		var inBottom = isInBottom();
 
 		if (inBottom && !sticky) {
-			// Show Navegation
+			// Show Stiky Navegation
 			console.log('Change Navegation');
 			sticky = true;
-			stickNavegation();
+			stickNavigation();
 		}
 		if (!inBottom && sticky) {
-			// Hide Navegation
+			// Hide Stiky Navegation
+
 			console.log('Return Navegation');
 			sticky = false;
-			unStickNavegation();
+			unStickNavigation();
 		}
 	});
 
-	function stickNavegation() {
-		$("#description").addClass("fixed").removeClass('absolute');
-		$("#navegation").slideUp();
-		$("#sticky-navegation").slideDown();
+	function stickNavigation() {
+		$("#description").addClass('fixed').removeClass('absolute');
+		// $("#navigation").addClass('hidden');
+		// $("#sticky-navigation").removeClass('hidden');
+
+		$("#navigation").slideUp("100");
+		$("#sticky-navigation").slideDown("100");
 	}
-	function unStickNavegation() {
+	function unStickNavigation() {
 		$("#description").removeClass('fixed').addClass('absolute');
-		$("#navegation").slideUp('hidden');
-		$("#sticky-navegation").slideDown("hidden");
+
+		// $("#navigation").removeClass('hidden');
+		// $("#sticky-navigation").addClass('hidden');
+
+
+		$("#navigation").slideDown('100');
+		$("#sticky-navigation").slideUp("100");
 	}
 
+	//Scroll return "true" if get to bottom of screen
 	function isInBottom() {
 		var $description = $("#description");
 		var descriptionHeight = $description.height();
-		return $(window).scrollTop() > $(window).height() - descriptionHeight * 1.5;
+		return $(window).scrollTop() > $(window).height() - descriptionHeight * 1;
 	}
 })();

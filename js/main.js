@@ -1,25 +1,29 @@
+if(navigator.serviceWorker){
+	navigator.serviceWorker.register("/sw.js");
+
+}
+
 ;(function(){
-	let sticky = false
-	let currentPosition = 0;
+	var sticky = false;
+	var currentPosition = 0;
 	
-	const imageCounter = $("[data-name='image-counter']").attr("content")
-	const email = "mmirabalp@gmail.com"
+	var imageCounter = $("[data-name='image-counter']").attr("content");
+	var email = "mmirabalp@gmail.com";
 
 	$("#contact_form").on('submit', function(event){
 		event.preventDefault();
 		sendForm($(this));
 
-		return false
-	})
+		return false;
+	});
 
 	// console.log($(window).height());
-	// console.log(imageCounter);
+	console.log("imageCounter: " + imageCounter);
 
-	$("#sticky-navegation").removeClass("hidden")
-	$("#stick-navegation").slideUp()
+	$("#sticky-navigation").removeClass("hidden");
+	$("#stick-navegation").slideUp(0);
 
-	setInterval(()=>{
-	  // Todo...
+	setInterval(function(){
 	  console.log('test');
 
 	  if(currentPosition < imageCounter){
@@ -31,50 +35,64 @@
 	  
 	  $("#gallery .inner").css({
 	  	left: "-" + currentPosition*100 + "%"
-	  })
-	}, 3000)
+	  });
+	}, 3000);
 
-	$(window).scroll(()=>{
+	$(window).scroll(function(){
 		// console.log(isInBottom());
-		const inBottom = isInBottom();
+
+		console.log("$(window).scrollTop()"+$(window).scrollTop());
+		console.log("$(window).height()"+$(window).height());
+
+		var inBottom = isInBottom();
 
 		if(inBottom && !sticky){
-			// Show Navegation
+			// Show Stiky Navegation
 			console.log('Change Navegation');
 			sticky = true;
-			stickNavegation()
+			stickNavigation();
 
 		}
 		if(!inBottom && sticky){
-			// Hide Navegation
+			// Hide Stiky Navegation
+
 			console.log('Return Navegation');
 			sticky = false;
-			unStickNavegation();
+			unStickNavigation();
 
 		}
-	})
+	});
 
-	function stickNavegation(){
-		$("#description").addClass("fixed").removeClass('absolute')
-		$("#navegation").slideUp()
-		$("#sticky-navegation").slideDown()
+	function stickNavigation(){
+		$("#description").addClass('fixed').removeClass('absolute');
+		// $("#navigation").addClass('hidden');
+		// $("#sticky-navigation").removeClass('hidden');
+
+		$("#navigation").slideUp("100");
+		$("#sticky-navigation").slideDown("100");
 
 	
 	}
-	function unStickNavegation(){
-		$("#description").removeClass('fixed').addClass('absolute')
-		$("#navegation").slideUp('hidden')
-		$("#sticky-navegation").slideDown("hidden")
+	function unStickNavigation(){
+		$("#description").removeClass('fixed').addClass('absolute');
+		
+		// $("#navigation").removeClass('hidden');
+		// $("#sticky-navigation").addClass('hidden');
+
+
+		$("#navigation").slideDown('100');
+		$("#sticky-navigation").slideUp("100");
 
 	}
 
+	//Scroll return "true" if get to bottom of screen
 	function isInBottom(){
-		const $description = $("#description")
-		const descriptionHeight = $description.height()
-		return $(window).scrollTop() > $(window).height() - (descriptionHeight) * 1.5
+		var $description = $("#description");
+		var descriptionHeight = $description.height();
+		return $(window).scrollTop() > $(window).height() - (descriptionHeight) * 1;
 	}
 
 
 
 
-})()
+})();

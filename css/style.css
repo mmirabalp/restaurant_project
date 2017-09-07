@@ -159,10 +159,26 @@ textarea {
    ========================================================================== */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
-
+@media only screen and (max-width: 960px) {
+  #responsive-nav ul {
+    position: absolute;
+    width: 100%;
+    font-size: 1.5em;
+    top: 95px;
+    background-color: #222;
+    left: 0px;
+    text-align: center;
+    max-height: 30000px;
+    overflow: hidden;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+    #responsive-nav ul li {
+      display: block;
+      margin-top: 1em;
+      padding: 10px 15px; } }
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
-
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -175,48 +191,57 @@ textarea {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+       http://www.sanbeiji.com/archives/953 */
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     text-shadow: none !important; }
+
   a,
   a:visited {
     text-decoration: underline; }
+
   a[href]:after {
     content: " (" attr(href) ")"; }
+
   abbr[title]:after {
     content: " (" attr(title) ")"; }
+
   /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: ""; }
+
   pre {
     white-space: pre-wrap !important; }
+
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
+
   /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
   thead {
     display: table-header-group; }
+
   tr,
   img {
     page-break-inside: avoid; }
+
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3; }
+
   h2,
   h3 {
     page-break-after: avoid; } }
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -245,24 +270,23 @@ h1 {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
 
-.navegation li {
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s; }
-  .navegation li:hover {
-    background-color: rgba(0, 0, 0, 0.2); }
-  .navegation li a {
+.navigation li {
+  padding: 5px 10px;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s; }
+  .navigation li:hover {
+    background-color: rgba(0, 0, 0, 0.8); }
+  .navigation li a {
     color: white;
     cursor: pointer; }
-    .navegation li a:hover {
+    .navigation li a:hover {
       text-decoration: none; }
 
 #description ul {
   margin: 0px; }
-
 #description.absolute {
   bottom: 0px; }
-
 #description.fixed {
   top: 0px; }
 
@@ -383,7 +407,7 @@ h1 {
   margin-bottom: 400px; }
 
 .black {
-  background-color: black; }
+  background-color: #222222; }
 
 .lobster {
   font-family: 'Dancing Script', cursive; }
@@ -394,8 +418,11 @@ h1 {
 .small {
   font-size: 13px; }
 
-.medium, .navegation li {
+.medium, .navigation li {
   font-size: 1.5em; }
+
+.text-align {
+  float: left; }
 
 .large-padding {
   padding: 10px 15px; }
@@ -407,7 +434,7 @@ h1 {
 .subtitle {
   font-size: 2.5em; }
 
-.medium, .navegation li {
+.medium, .navigation li {
   font-size: 1.5em; }
 
 .subtitle {
@@ -425,6 +452,9 @@ h1 {
 .top {
   top: 3em; }
 
+.marging-top {
+  margin-top: 1%; }
+
 .right {
   right: 1em; }
 
@@ -441,7 +471,7 @@ h1 {
   width: 100%; }
 
 .row {
-  margin: -10.7px;
+  margin: -0.3px;
   padding-bottom: 20px; }
 
 .no-margin {
@@ -466,3 +496,5 @@ h1 {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-start', endColorstr='$color-end',GradientType=1 );
   /* IE6-9 */ }
+
+
