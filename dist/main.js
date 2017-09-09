@@ -25,7 +25,7 @@ if (navigator.serviceWorker) {
 	$("#stick-navegation").slideUp(0);
 
 	setInterval(function () {
-		console.log('test');
+		console.log('Image setInterval');
 
 		if (currentPosition < imageCounter) {
 			currentPosition++;

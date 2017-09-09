@@ -310,9 +310,9 @@ h1 {
 
 #menu-title {
   width: 300px;
-  z-index: 100;
+  z-index: 5;
   left: calc(50% - 150px);
-  top: calc(50% + 18em); }
+  top: calc(50% + 2.5em); }
 
 #gallery {
   width: 100%;
