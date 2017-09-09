@@ -2,3 +2,5 @@
 config.codekit
 
 *.config
+
+node_modules/*

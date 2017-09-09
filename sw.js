@@ -1,9 +1,9 @@
 var CACHE_NAME = "latinRestaurant-v1"
 var cache_urls = [
-																		"/offline/view.html", 
-																		"/offline/styles.css", 
-																		"/offline/offlineLocation.png"
-																		]
+									"/offline/view.html",
+									"/offline/styles.css",
+									"/offline/offlineLocation.png"
+									]
 
 
 
