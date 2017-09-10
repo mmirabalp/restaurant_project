@@ -10,15 +10,25 @@
 var gulp  = require('gulp'),
     sass  = require('gulp-sass'),
     watch = require('gulp-watch'),
+    haml  = require('gulp-ruby-haml'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload;
 
+
 // gulp sass | compiles sass to destination folder
 gulp.task('sass', function() {
-  gulp.src('styles/main.scss')
+  gulp.src('css/style.scss')
     .pipe(sass())
-    .pipe(gulp.dest('styles'));
+    .pipe(gulp.dest('./css'));
 });
+
+// gulp haml | compiles haml to destination folder
+gulp.task('haml', function() {
+  gulp.src('index.haml')
+    .pipe(haml())
+    .pipe(gulp.dest('./'));
+});
+
 
 // gulp watch | runs browser sync
 gulp.task('watch', function() {
@@ -27,9 +37,18 @@ gulp.task('watch', function() {
   });
 
   // watches for changes on scss and html files
-  gulp.watch('styles/*.scss', ['sass']);
-  gulp.watch(['styles/*.scss', './*.html']).on('change', reload);
+  gulp.watch('css/*.scss', ['sass']);
+  gulp.watch('./*.haml', ['haml']);
+  gulp.watch([
+    './css/*.scss',
+    './*.html',
+    './*.haml',
+    './js/*.js'
+    ]).on('change', reload);
 });
 
+
+
+
 // gulp | default runs sass and watch
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'haml', 'watch']);

@@ -1,12 +1,12 @@
 if(navigator.serviceWorker){
-	navigator.serviceWorker.register("/sw.js");
+	navigator.serviceWorker.register("./sw.js");
 
 }
 
 ;(function(){
 	var sticky = false;
 	var currentPosition = 0;
-	
+
 	var imageCounter = $("[data-name='image-counter']").attr("content");
 	var email = "mmirabalp@gmail.com";
 
@@ -32,7 +32,7 @@ if(navigator.serviceWorker){
 	  	currentPosition = 0;
 	  }
 
-	  
+
 	  $("#gallery .inner").css({
 	  	left: "-" + currentPosition*100 + "%"
 	  });
@@ -71,11 +71,11 @@ if(navigator.serviceWorker){
 		$("#navigation").slideUp("100");
 		$("#sticky-navigation").slideDown("100");
 
-	
+
 	}
 	function unStickNavigation(){
 		$("#description").removeClass('fixed').addClass('absolute');
-		
+
 		// $("#navigation").removeClass('hidden');
 		// $("#sticky-navigation").addClass('hidden');
 

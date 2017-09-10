@@ -14,7 +14,9 @@
   "homepage": "https://github.com/mmirabalp/restaurant_project#readme",
   "dependencies": {
     "browser-sync": "^2.18.13",
+    "easy-beautify": "^0.1.2",
     "gulp": "^3.9.1",
+    "gulp-ruby-haml": "0.0.9",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11"
   }

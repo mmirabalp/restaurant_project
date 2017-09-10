@@ -26,9 +26,6 @@ html, body {
  *
  * Customize the background color to match your design.
  */
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none; }
 ::selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -97,7 +94,6 @@ textarea {
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   height: 1px;
   margin: 0;
@@ -116,7 +112,6 @@ textarea {
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
-  -webkit-clip-path: none;
   clip-path: none;
   height: auto;
   margin: 0;
@@ -159,6 +154,7 @@ textarea {
    ========================================================================== */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
+
 @media only screen and (max-width: 960px) {
   #responsive-nav ul {
     position: absolute;
@@ -170,15 +166,15 @@ textarea {
     text-align: center;
     max-height: 30000px;
     overflow: hidden;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
     transition: all 0.4s; }
     #responsive-nav ul li {
       display: block;
       margin-top: 1em;
       padding: 10px 15px; } }
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (-o-min-device-pixel-ratio: 5/4), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+
+@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -191,57 +187,47 @@ textarea {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster:
-       http://www.sanbeiji.com/archives/953 */
-    -webkit-box-shadow: none !important;
+                                   http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
     text-shadow: none !important; }
-
   a,
   a:visited {
     text-decoration: underline; }
-
   a[href]:after {
     content: " (" attr(href) ")"; }
-
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-
   /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: ""; }
-
   pre {
     white-space: pre-wrap !important; }
-
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
-
   /*
-   * Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
   thead {
     display: table-header-group; }
-
   tr,
   img {
     page-break-inside: avoid; }
-
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3; }
-
   h2,
   h3 {
     page-break-after: avoid; } }
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -267,13 +253,10 @@ h1 {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
 
 .navigation li {
   padding: 5px 10px;
-  -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
   transition: all 0.8s; }
   .navigation li:hover {
     background-color: rgba(0, 0, 0, 0.8); }
@@ -285,8 +268,10 @@ h1 {
 
 #description ul {
   margin: 0px; }
+
 #description.absolute {
   bottom: 0px; }
+
 #description.fixed {
   top: 0px; }
 
@@ -304,8 +289,6 @@ h1 {
     background-color: rgba(0, 0, 0, 0.7);
     height: 100%;
     width: 100%;
-    -webkit-transition: top 2s;
-    -o-transition: top 2s;
     transition: top 2s; }
 
 #menu-title {
@@ -322,8 +305,6 @@ h1 {
     white-space: nowrap;
     position: relative;
     left: 0%;
-    -webkit-transition: left 3s;
-    -o-transition: left 3s;
     transition: left 3s; }
   #gallery .image {
     display: inline-block;
@@ -345,25 +326,19 @@ h1 {
   display: inline-block;
   margin-top: 2em;
   opacity: 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer; }
   .path-step.hover {
-    -webkit-box-shadow: 0px 0px 5px rgba(250, 250, 250, 0.8);
     box-shadow: 0px 0px 5px rgba(250, 250, 250, 0.8);
     opacity: 0.9; }
   .path-step.active {
     opacity: 1;
     background-color: white;
-    -webkit-box-shadow: 0px 0px 5px rgba(250, 250, 250, 0.8);
     box-shadow: 0px 0px 5px rgba(250, 250, 250, 0.8); }
 
 .step-form .step {
   max-height: 0px;
   overflow: hidden;
-  -webkit-transition: all 2s;
-  -o-transition: all 2s;
   transition: all 2s;
   margin: 0px; }
   .step-form .step.active {
@@ -402,7 +377,6 @@ h1 {
   color: rgba(26, 26, 26, 0.78); }
 
 .card {
-  -webkit-box-shadow: 0px 0px 10px black;
   box-shadow: 0px 0px 10px black;
   margin-bottom: 400px; }
 
@@ -490,11 +464,7 @@ h1 {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(63, 76, 107, 0.8) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.8)), to(rgba(63, 76, 107, 0.8)));
-  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(63, 76, 107, 0.8) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(63, 76, 107, 0.8) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-start', endColorstr='$color-end',GradientType=1 );
   /* IE6-9 */ }
-
-

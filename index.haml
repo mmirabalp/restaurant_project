@@ -6,7 +6,7 @@
 /[if IE 8 ]    <html lang="en" class="no-js ie8">
 /[if IE 9 ]    <html lang="en" class="no-js ie9">
 
--# <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" 
+-# <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"
 -# class="no-js"> <!--<![endif]-->
 %html{class:"no-js", lang:"en"}
 	%head
@@ -18,14 +18,14 @@
 		%meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
 		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 
-		%link{rel:"stylesheet", href:"css/normalize.css"}
-		%link{rel:"stylesheet", href:"css/bootstrap.css"}
 		%link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
-		%link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
+
+		%link{rel:"stylesheet", href:"css/vendor/normalize.css"}
+		%link{rel:"stylesheet", href:"css/vendor/bootstrap.css"}
+		%link{rel:"stylesheet", href:"css/vendor/flexboxgrid.min.css"}
+
 		%link{rel:"stylesheet", href:"css/style.css"}
-		
-		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
-	
+
 	%body
 		="<!--[if lt IE 9]>"
 		%p{class:"browserupgrade"}
@@ -45,7 +45,7 @@
 		.row.full-height.middle-xs.center-xs.relative.up#home
 			.col-xs-12
 				.box.white-text
-					-# %img{src:"/imgs/logo.png", width:200}
+					-# %img{src:"/images/logo.png", width:200}
 					%h1.title.lobster.no-margin Latin Restaurant
 					%p#is-open
 						%i.glyphicon.glyphicon-time
@@ -69,7 +69,7 @@
 									-menu.each do |item|
 										%li
 											%a{}= item
-				
+
 
 	.full-height.top-space
 		.text-center.relative#menu
@@ -79,7 +79,7 @@
 		-menu_photos = [ {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Hamburger", pricing:"10.00", image: "hamburger"}, {name:"Hot Cakes", pricing:"12.00", image: "hot-cakes"}, {name:"Panini", pricing:"10.00", image: "panini"}, {name:"French Frys", pricing:"12.00", image: "papas"}, {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"} ]
 		.row
 			-menu_photos.each do |photo|
-				.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
+				.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(images/food/#{photo[:image]}-thumb.jpg)"}
 					.screen
 						.row.middle-xs.center-xs.full-height
 							.col-xs-12
@@ -89,13 +89,13 @@
 		#gallery
 			.inner
 				-gallery_images.each do |image|
-					.image{style:"background-image:url(imgs/food/#{image});"}
+					.image{style:"background-image:url(images/food/#{image});"}
 			.containter.card.black-background.white-text.text-center.relative
 				%h3.medium.slim
 					Here at
 					%strong.lobster.medium Latin Restaurant,
-					The Secret is  
-					%strong.lobster.medium at the table. 
+					The Secret is
+					%strong.lobster.medium at the table.
 				%p
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -114,19 +114,19 @@
 						.row.center-xs
 							.col-xs-2.col-md-1.text-center
 								.box
-									-3.times do |i|	
+									-3.times do |i|
 										-if i == 0
 											.path-step.active
 										-else
 											.path-step
-										%br					
+										%br
 							.col-xs-5
 								.box.white-text
 									%fieldset.step.active
 										%input{type:"email", name:"email",placeholder:"Email", class:"input", required: true}
 									%fieldset.step
 										%input{type:"text", name:"text",placeholder:"Name", class:"input", required: true}
-									%fieldset.step	
+									%fieldset.step
 										%textarea{name:"body",placeholder:"Message", class:"input", required: true}
 
 										%button.black-text{type:"submit", class:"btn btn-success"}Submit
@@ -135,16 +135,14 @@
 		#map
 		#message.black.large-padding.white-text.text-center.medium
 			Location of the restaurant
-			
+
+	%script{src:"js/vendor/modernizr-2.8.3.min.js"}
 	%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
 	%script
 		window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
 	%script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyD-a47QLCgZY9RrF0Dz0BiloT7NA1XvVoM"}
-	%script{src:"dist/maps.js"}
-	%script{src:"dist/form_object.js"}
-	%script{src:"dist/main.js"}
-	%script{src:"dist/step.js"}
-
-
-
-
+	%script{src:"js/bootstrap.js"}
+	%script{src:"js/maps.js"}
+	%script{src:"js/form_object.js"}
+	%script{src:"js/main.js"}
+	%script{src:"js/steps.js"}
