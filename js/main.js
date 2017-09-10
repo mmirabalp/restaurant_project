@@ -20,8 +20,8 @@ if(navigator.serviceWorker){
 	// console.log($(window).height());
 	console.log("imageCounter: " + imageCounter);
 
-	$("#sticky-navigation").removeClass("hidden");
-	$("#stick-navegation").slideUp(0);
+	var stickyNav = $("#sticky-navigation")
+	stickyNav.removeClass("hidden").slideUp(0);
 
 	setInterval(function(){
 	  console.log('Image setInterval');

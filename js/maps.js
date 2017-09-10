@@ -29,7 +29,7 @@
 
 var my_place = {
 						lat: 36.159537,
-						lng: -115.208751				
+						lng: -115.208751
 }
 
 	google.maps.event.addDomListener(window,"load",function(){
@@ -51,7 +51,7 @@ var my_place = {
 
 		UserLocation.get(function(coords){
 			console.log(coords);
-			alert("I got User coordenate")
+			
 
 			// Calculater distanse between restaurant and client location
 			var origin = new google.maps.LatLng(coords.lat, coords.lng)
@@ -69,7 +69,7 @@ var my_place = {
 					var duration_element = response.rows[0].elements[0]
 					var duration_trip = duration_element.duration.text
 					document.querySelector("#message").innerHTML= 'Time to arrive at restaurant is: ' + duration_trip
-					
+
 					// console.log(duration_element);
 				}
 
@@ -82,6 +82,3 @@ var my_place = {
 
 	})
 })();
-
-
-
