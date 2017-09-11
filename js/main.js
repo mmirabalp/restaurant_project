@@ -17,14 +17,21 @@ if(navigator.serviceWorker){
 		return false;
 	});
 
-	// console.log($(window).height());
-	console.log("imageCounter: " + imageCounter);
+
 
 	var stickyNav = $("#sticky-navigation")
 	stickyNav.removeClass("hidden").slideUp(0);
 
+
+	$("#menu-opener").on('click', function(){
+		$("#responsive-nav ul").toggleClass("active");
+		$(this).toggleClass("glyphicon-menu-hamburger")
+
+	})
+
+
 	setInterval(function(){
-	  console.log('Image setInterval');
+
 
 	  if(currentPosition < imageCounter){
 	  	currentPosition++;

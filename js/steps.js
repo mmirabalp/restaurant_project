@@ -85,7 +85,7 @@
 
 
 		//COORDINATE CIRCLES IN FORM MINI-NAVEGATION
-		var position = ($next_step.index(".step") *2) +1;
+		var position = ($next_step.index(".step")) +1;
 
 		// $(".path-step.active").removeClass("active")
 

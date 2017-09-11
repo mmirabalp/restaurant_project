@@ -27,7 +27,6 @@ Please
 upgrade your browser to improve your experience.
 </p>
 <![endif]-->
-<!-- /Video container to show video -->
 <div class='video-container absolute title-container'>
 <video autoplay height='720%' loop poster='videos/images/bbq.jpg' width='1280%'>
 <source src='videos/mp4/bbq.mp4'>
@@ -35,15 +34,6 @@ upgrade your browser to improve your experience.
 </video>
 </div>
 <div class='row full-height middle-xs center-xs relative up' id='home'>
-<div class='col-xs-12'>
-<div class='box white-text'>
-<h1 class='title lobster no-margin'>Latin Restaurant</h1>
-<p id='is-open'>
-<i class='glyphicon glyphicon-time'></i>
-Open Now
-</p>
-</div>
-</div>
 <nav class='fixed top right navigation white-text' id='navigation'>
 <ul class='list-inline'>
 <li>
@@ -63,15 +53,24 @@ Open Now
 </li>
 </ul>
 </nav>
+<div class='col-xs-12'>
+<div class='box white-text'>
+<h1 class='title lobster no-margin'>Latin Restaurant</h1>
+<p id='is-open'>
+<i class='glyphicon glyphicon-time'></i>
+<div class='text'>Open Now</div>
+</p>
+</div>
+</div>
 <div class='absolute black large-padding white-text full-width' id='description'>
 <div class='row middle-xs center-xs medium' id='infoDescription'>
 <div class='col-xs-7 col-sm-6 white-text absolute marging-top text-align'>
-Good Customer Service and Delicious Food
+Good Customer Service
 </div>
 <div class='col-xs hidden' id='sticky-navigation'>
 <div class='box'>
 <nav class='text-right navigation small' id='responsive-nav'>
-<i class='glyphicon glyphicon-align-justify white-text'></i>
+<i class='glyphicon glyphicon-menu-hamburger white-text subtitle glyphicon-remove' id='menu-opener'></i>
 <ul class='list-inline'>
 <li>
 <a>Home</a>
@@ -95,12 +94,10 @@ Good Customer Service and Delicious Food
 </div>
 </div>
 </div>
-</body>
-<div class='full-height top-space'>
+<div class='full-height'>
 <div class='text-center relative' id='menu'>
-<div class='absolute up white-text black-background' id='menu-title'>
+<div class='absolute up white-text black roundBorders' id='menu-title'>
 <h2 class='lobster title'>Menu</h2>
-</div>
 </div>
 <div class='row'>
 <div class='col-md-4 col-lg-3 col-sm-6 col-xs-12 food' style='background-image:url(images/food/club-sandwich-thumb.jpg)'>
@@ -183,16 +180,27 @@ Good Customer Service and Delicious Food
 </div>
 </div>
 </div>
+<div class='col-md-4 col-lg-3 col-sm-6 col-xs-12 food' style='background-image:url(images/food/combo-thumb.jpg)'>
+<div class='screen'>
+<div class='row middle-xs center-xs full-height'>
+<div class='col-xs-12'>
+<h3 class='lobster white-text subtitle'>Combo Hamburger</h3>
+<p class='no-margin white-text'>12.00USD</p>
 </div>
 </div>
-<div class='full-height'>
+</div>
+</div>
+</div>
+</div>
 <div id='gallery'>
 <div class='inner'>
 <div class='image' style='background-image:url(images/food/club-sandwich.jpg);'></div>
 <div class='image' style='background-image:url(images/food/papas.jpg);'></div>
 <div class='image' style='background-image:url(images/food/hamburger.jpg);'></div>
 </div>
-<div class='containter card black-background white-text text-center relative'>
+</div>
+<div class='containter'>
+<div class='card black-background white-text text-center relative sideMargings'>
 <h3 class='medium slim'>
 Here at
 <strong class='lobster medium'>Latin Restaurant,</strong>
@@ -210,8 +218,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 <strong class='lobster medium'>Mawel - Chef</strong>
 </div>
 </div>
-</div>
-<div class='black white-text full-height' id='contact'>
+<div class='black white-text full-height top-space--2' id='contact'>
 <div class='row middle-xs full-height'>
 <div class='col-xs-12'>
 <div class='box'>
@@ -221,11 +228,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 <div class='col-xs-2 col-md-1 text-center'>
 <div class='box'>
 <div class='path-step active'></div>
-<br>
 <div class='path-step'></div>
-<br>
 <div class='path-step'></div>
-<br>
 </div>
 </div>
 <div class='col-xs-5'>
@@ -248,10 +252,11 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 </div>
 </div>
-<div id='location'>
+<div class='full-width' id='location'>
 <div id='map'></div>
 <div class='black large-padding white-text text-center medium' id='message'>
 Location of the restaurant
+</div>
 </div>
 </div>
 <script src='js/vendor/modernizr-2.8.3.min.js'></script>
@@ -260,9 +265,10 @@ Location of the restaurant
 window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
 </script>
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD-a47QLCgZY9RrF0Dz0BiloT7NA1XvVoM'></script>
-<script src='js/bootstrap.js'></script>
+<script src='js/vendor/bootstrap.js'></script>
 <script src='js/maps.js'></script>
 <script src='js/form_object.js'></script>
 <script src='js/main.js'></script>
 <script src='js/steps.js'></script>
+</body>
 </html>
