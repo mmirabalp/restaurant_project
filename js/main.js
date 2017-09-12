@@ -22,13 +22,16 @@ if(navigator.serviceWorker){
 	var stickyNav = $("#sticky-navigation")
 	stickyNav.removeClass("hidden").slideUp(0);
 
+	checkScroll();
+	isOpen();
 
 	$("#menu-opener").on('click', function(){
 		$("#responsive-nav ul").toggleClass("active");
-		$(this).toggleClass("glyphicon-menu-hamburger")
+		$(this).toggleClass("glyphicon-menu-hamburger");
 
 	})
 
+	$(".menu-link").on("click", toggleNav)
 
 	setInterval(function(){
 
@@ -45,17 +48,18 @@ if(navigator.serviceWorker){
 	  });
 	}, 3000);
 
-	$(window).scroll(function(){
-		// console.log(isInBottom());
+	$(window).scroll(checkScroll);
 
-		console.log("$(window).scrollTop()"+$(window).scrollTop());
-		console.log("$(window).height()"+$(window).height());
+	function checkScroll(){
+
+		// console.log("$(window).scrollTop()"+$(window).scrollTop());
+		// console.log("$(window).height()"+$(window).height());
 
 		var inBottom = isInBottom();
 
 		if(inBottom && !sticky){
 			// Show Stiky Navegation
-			console.log('Change Navegation');
+			// console.log('Change Navegation');
 			sticky = true;
 			stickNavigation();
 
@@ -63,12 +67,31 @@ if(navigator.serviceWorker){
 		if(!inBottom && sticky){
 			// Hide Stiky Navegation
 
-			console.log('Return Navegation');
+			// console.log('Return Navegation');
 			sticky = false;
 			unStickNavigation();
 
 		}
-	});
+	}
+
+	function isOpen(){
+		// 24 hours format => 5pm - 11pm = 17 - 23
+		var date = new Date();
+		var current_hour= date.getHours()
+
+		// console.log("current_hour  "+current_hour);
+
+		if(current_hour< 17 || current_hour> 23){
+			$("#is_open .text").html("Close Now <br> Opens 5:00pm - 11:00pm");
+		}
+
+	}
+
+	function toggleNav(){
+		$("#responsive-nav ul").toggleClass("active");
+		$(".menu-opener").toggleClass("glyphicon-menu-hamburger")
+
+	}
 
 	function stickNavigation(){
 		$("#description").addClass('fixed').removeClass('absolute');

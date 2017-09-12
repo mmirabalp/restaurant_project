@@ -42,18 +42,18 @@
 				%source{src:"videos/webm/bbq.webm"}
 
 		.row.full-height.middle-xs.center-xs.relative.up#home
-			-menu = ["Home", "Menu", "Galery", "Contact", "Location"]
+			-menu = [{title:"Home", link:"#home"}, {title:"Menu", link:"#menu"}, {title:"Gallery", link:"#gallery"}, {title:"Contact", link:"#contact"}, {title:"Location", link:"#location"}]
 			%nav.fixed.top.right.navigation.white-text#navigation
 				%ul.list-inline
 					-menu.each do |item|
 						%li
-							%a{}= item
+							%a{href:item[:link]}= item[:title]
 			.col-xs-12
 				.box.white-text
 					%h1.title.lobster.no-margin Latin Restaurant
-					%p#is-open
+					%p#is_open
 						%i.glyphicon.glyphicon-time
-						.text Open Now
+						%span.text Open Now
 
 			.absolute.black.large-padding.white-text.full-width#description
 				.row.middle-xs.center-xs.medium#infoDescription
@@ -66,7 +66,7 @@
 								%ul.list-inline
 									-menu.each do |item|
 										%li
-											%a{}= item
+											%a.menu-link{href:item[:link]}= item[:title]
 		.full-height
 			.text-center.relative#menu
 				.absolute.up.white-text.black#menu-title.roundBorders
@@ -102,7 +102,7 @@
 					%strong.lobster.medium Mawel - Chef
 
 			.black.white-text.full-height#contact.top-space--2
-				.row.middle-xs.full-height
+				.row.middle-xs.full-height.backgroundColor
 					.col-xs-12
 						.box
 							%p.text-center.medium#info-contact Press Enter to fill up the form and send us an email...Thank You

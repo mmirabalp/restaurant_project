@@ -15,6 +15,7 @@ html {
     font-size: 1em;
     line-height: 1.4;
     background-color:#191919;
+
 }
 html,body{
   height: 100%;
@@ -105,6 +106,10 @@ textarea {
    h1 {
     font-size: 3em;
     margin: 0;
+  }
+
+  .backgroundColor{
+   background-color: #191919; 
   }
 
  .video-container {
@@ -533,7 +538,7 @@ textarea {
     /* Style adjustments for viewports that meet the condition */
 }
 
-@media only screen and (min-width: 500px){
+@media only screen and (min-width: 600px){
     #responsive-nav{
       ul{
         top: 80px;
@@ -541,24 +546,32 @@ textarea {
     }
 }
 
+@media only screen and (max-height: 35em){
+    /* Style adjustments for viewports that meet the condition */
+}
+
 @media only screen and(max-width: 960px){
+  #navigation{
+   display: none !important;
+  }
   #menu-opener{
     display: block;
   }
   #responsive-nav{
+    
     ul{
       position: absolute;
       width: 100%;
       font-size: 1.5em;
-      top: 80px;
-      top: 95px;
+      // top: 80px;
+      top: 71px;
       background-color: #222;
       left: 0px;
       text-align: center;
-      max-height: 300px;
+      max-height: 0px;
       overflow: hidden;
       transition: all 0.4s;
-      &.adtive{
+      &.active{
         max-height: 80vh;
       }
       li{
