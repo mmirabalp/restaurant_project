@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-    // assetsHandler := http.FileServer(http.Dir("./"))    
-    
+    // assetsHandler := http.FileServer(http.Dir("./"))
+
     http.HandleFunc("/sw",func(w http.ResponseWriter, r *http.Request){
         w.Header().Add("Content-Type", "application/javascript")
-        http.ServeFile(w,r,"./sw.js")
+        http.ServeFile(w,r,"./js/sw.js")
     })
 
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
@@ -26,7 +26,7 @@ func main() {
         }
 
         if contentType != "" {
-            w.Header().Add("Content Type",contentType)    
+            w.Header().Add("Content Type",contentType)
         }
         w.Header().Add("Cache-Control", "no-cache, no-store, must-revalidate")
         w.Header().Add("Pragma", "no-cache")

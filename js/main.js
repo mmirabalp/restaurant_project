@@ -1,12 +1,12 @@
 if(navigator.serviceWorker){
-	navigator.serviceWorker.register("/sw.js");
+	navigator.serviceWorker.register("./sw.js");
 
 }
 
 ;(function(){
 	var sticky = false;
 	var currentPosition = 0;
-	
+
 	var imageCounter = $("[data-name='image-counter']").attr("content");
 	var email = "mmirabalp@gmail.com";
 
@@ -17,14 +17,24 @@ if(navigator.serviceWorker){
 		return false;
 	});
 
-	// console.log($(window).height());
-	console.log("imageCounter: " + imageCounter);
 
-	$("#sticky-navigation").removeClass("hidden");
-	$("#stick-navegation").slideUp(0);
+
+	var stickyNav = $("#sticky-navigation")
+	stickyNav.removeClass("hidden").slideUp(0);
+
+	checkScroll();
+	isOpen();
+
+	$("#menu-opener").on('click', function(){
+		$("#responsive-nav ul").toggleClass("active");
+		$(this).toggleClass("glyphicon-menu-hamburger");
+
+	})
+
+	$(".menu-link").on("click", toggleNav)
 
 	setInterval(function(){
-	  console.log('Image setInterval');
+
 
 	  if(currentPosition < imageCounter){
 	  	currentPosition++;
@@ -32,23 +42,24 @@ if(navigator.serviceWorker){
 	  	currentPosition = 0;
 	  }
 
-	  
+
 	  $("#gallery .inner").css({
 	  	left: "-" + currentPosition*100 + "%"
 	  });
 	}, 3000);
 
-	$(window).scroll(function(){
-		// console.log(isInBottom());
+	$(window).scroll(checkScroll);
 
-		console.log("$(window).scrollTop()"+$(window).scrollTop());
-		console.log("$(window).height()"+$(window).height());
+	function checkScroll(){
+
+		// console.log("$(window).scrollTop()"+$(window).scrollTop());
+		// console.log("$(window).height()"+$(window).height());
 
 		var inBottom = isInBottom();
 
 		if(inBottom && !sticky){
 			// Show Stiky Navegation
-			console.log('Change Navegation');
+			// console.log('Change Navegation');
 			sticky = true;
 			stickNavigation();
 
@@ -56,12 +67,31 @@ if(navigator.serviceWorker){
 		if(!inBottom && sticky){
 			// Hide Stiky Navegation
 
-			console.log('Return Navegation');
+			// console.log('Return Navegation');
 			sticky = false;
 			unStickNavigation();
 
 		}
-	});
+	}
+
+	function isOpen(){
+		// 24 hours format => 5pm - 11pm = 17 - 23
+		var date = new Date();
+		var current_hour= date.getHours()
+
+		// console.log("current_hour  "+current_hour);
+
+		if(current_hour< 17 || current_hour> 23){
+			$("#is_open .text").html("Close Now <br> Opens 5:00pm - 11:00pm");
+		}
+
+	}
+
+	function toggleNav(){
+		$("#responsive-nav ul").toggleClass("active");
+		$(".menu-opener").toggleClass("glyphicon-menu-hamburger")
+
+	}
 
 	function stickNavigation(){
 		$("#description").addClass('fixed').removeClass('absolute');
@@ -71,11 +101,11 @@ if(navigator.serviceWorker){
 		$("#navigation").slideUp("100");
 		$("#sticky-navigation").slideDown("100");
 
-	
+
 	}
 	function unStickNavigation(){
 		$("#description").removeClass('fixed').addClass('absolute');
-		
+
 		// $("#navigation").removeClass('hidden');
 		// $("#sticky-navigation").addClass('hidden');
 
