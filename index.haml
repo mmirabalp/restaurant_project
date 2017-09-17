@@ -1,24 +1,30 @@
-ssssss!!!5
+-gallery_images = [ "club-sandwich.jpg", "papas.jpg", "hamburger.jpg"]
+
+!!!5
 /[if lt IE 7] <html lang="en" class="no-js ie6">
 /[if IE 7 ]    <html lang="en" class="no-js ie7">
 /[if IE 8 ]    <html lang="en" class="no-js ie8">
 /[if IE 9 ]    <html lang="en" class="no-js ie9">
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+-# <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"
+-# class="no-js"> <!--<![endif]-->
 %html{class:"no-js", lang:"en"}
 	%head
 		%meta{charset:"utf-8"}
+		%meta{:"http-equiv" => "x-ua-compatible", content:"ie=edge"}
+		%title Latin Restaurant
+
 		%meta{name: "description", content: "Eat fresh and delicius latin food"}
+		%meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
 		%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
 
-		%link{rel:"stylesheet", href:"css/normalize.css"}
-		%link{rel:"stylesheet", href:"css/bootstrap.css"}
 		%link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
-		%link{rel:"stylesheet", href:"css/flexboxgrid.min.css"}
+
+		%link{rel:"stylesheet", href:"css/vendor/normalize.css"}
+		%link{rel:"stylesheet", href:"css/vendor/bootstrap.css"}
+		%link{rel:"stylesheet", href:"css/vendor/flexboxgrid.min.css"}
+
 		%link{rel:"stylesheet", href:"css/style.css"}
-
-		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
-
-		%title Latin Restaurant
 	%body
 		="<!--[if lt IE 9]>"
 		%p{class:"browserupgrade"}
@@ -29,48 +35,109 @@ ssssss!!!5
 			upgrade your browser to improve your experience.
 		="<![endif]-->"
 
-		//Video container to show video
+		-# //Video container to show video
 		.video-container.absolute.title-container
-			%video{autoplay:true, width:"100%", height:"100%",poster:"videos/images/bbq.jpg",loop:true}
+			%video{autoplay:true, width:"1280%", height:"720%",poster:"videos/images/bbq.jpg",loop:true}
 				%source{src:"videos/mp4/bbq.mp4"}
 				%source{src:"videos/webm/bbq.webm"}
-		.row.middle-xs.full-height.center-xs.up.relative#home
-			.col-xs-12
-				.box.white-text
-					-# %img{src:"/imgs/logo.png", width:200}
-					%h1.title.lobster.no-margin Latin Restaurant
-					%p#is-open
-						%i.glyphicon.glyphicon-time
-						Open Now
-			%nav.fixed.top.navegation.right.white-text#navegation
-				-menu = ["Home", "Menu", "Galery", "Contact", "Location"]
+
+		.row.full-height.middle-xs.center-xs.relative.up#home
+			-menu = [{title:"Home", link:"#home"}, {title:"Menu", link:"#menu"}, {title:"Gallery", link:"#gallery"}, {title:"Contact", link:"#contact"}, {title:"Location", link:"#location"}]
+			%nav.fixed.top.right.navigation.white-text#navigation
 				%ul.list-inline
 					-menu.each do |item|
 						%li
-							%a{}= item
+							%a{href:item[:link]}= item[:title]
+			.col-xs-12
+				.box.white-text
+					%h1.title.lobster.no-margin Latin Restaurant
+					%p#is_open
+						%i.glyphicon.glyphicon-time
+						%span.text Open Now
 
-			.absolute.large-padding.white-text.full-width#description
-				.row.middle-xs.center-xs.medium
-					.col-xs-7.col-sm-6.white-text.absolute
-						Good Customer Service and Delicious Food
-					.col-xs.hidden#sticky-navegation.invisible
+			.absolute.black.large-padding.white-text.full-width#description
+				.row.middle-xs.center-xs.medium#infoDescription
+					.col-xs-7.col-sm-6.white-text.absolute.marging-top.text-align
+						Good Customer Service
+					.col-xs.hidden#sticky-navigation
 						.box
-							%nav.text-right.navegation
+							%nav.text-right.navigation#responsive-nav.small
+								%i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle.glyphicon-remove#menu-opener
 								%ul.list-inline
 									-menu.each do |item|
 										%li
-											%a{}= item
-				
-	.full-height
-		-menu_photos = [ {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Hamburger", pricing:"10.00", image: "hamburger"}, {name:"Hot Cakes", pricing:"12.00", image: "hot-cakes"}, {name:"Panini", pricing:"10.00", image: "panini"}, {name:"French Frys", pricing:"12.00", image: "papas"}, {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"} ]
-		.row
-			-menu_photos.each do |photo|
-				.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
-					
-				
+											%a.menu-link{href:item[:link]}= item[:title]
+		.full-height
+			.text-center.relative#menu
+				.absolute.up.white-text.black#menu-title.roundBorders
+					%h2.lobster.title Menu
+				-menu_photos = [ {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Hamburger", pricing:"10.00", image: "hamburger"}, {name:"Hot Cakes", pricing:"12.00", image: "hot-cakes"}, {name:"Panini", pricing:"10.00", image: "panini"}, {name:"French Frys", pricing:"12.00", image: "papas"}, {name:"Club Sandwich", pricing:"10.00", image: "club-sandwich"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}, {name:"Combo Hamburger", pricing:"12.00", image: "combo"}  ]
+				.row
+					-menu_photos.each do |photo|
+						.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(images/food/#{photo[:image]}-thumb.jpg)"}
+							.screen
+								.row.middle-xs.center-xs.full-height
+									.col-xs-12
+										%h3.lobster.white-text.subtitle= photo[:name]
+										%p.no-margin.white-text= photo[:pricing] + "USD"
+		
+			#gallery
+				.inner
+					-gallery_images.each do |image|
+						.image{style:"background-image:url(images/food/#{image});"}
+			.containter
+				.card.black-background.white-text.text-center.relative.sideMargings
+					%h3.medium.slim
+						Here at
+						%strong.lobster.medium Latin Restaurant,
+						The Secret is
+						%strong.lobster.medium at the table.
+					%p
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					%strong.lobster.medium Mawel - Chef
 
+			.black.white-text.full-height#contact.top-space--2
+				.row.middle-xs.full-height.backgroundColor
+					.col-xs-12
+						.box
+							%p.text-center.medium#info-contact Press Enter to fill up the form and send us an email...Thank You
+							%form{action:"https://formspree.io/mmirabalp@gmail.com", method:"POST", id:"contact_form", class:"step-form"}
+								.row.center-xs
+									.col-xs-2.col-md-1.text-center
+										.box
+											-3.times do |i|
+												-if i == 0
+													.path-step.active
+												-else
+													.path-step
+									.col-xs-5
+										.box.white-text
+											%fieldset.step.active
+												%input{type:"email", name:"email",placeholder:"Email", class:"input", required: true}
+											%fieldset.step
+												%input{type:"text", name:"text",placeholder:"Name", class:"input", required: true}
+											%fieldset.step
+												%textarea{name:"body",placeholder:"Message", class:"input", required: true}
 
-	%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
-	%script
-		window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
-	%script{src:"/js/main.js"}
+												%button.black-text{type:"submit", class:"btn btn-success"}Submit
+
+			#location.full-width
+				#map
+				#message.black.large-padding.white-text.text-center.medium
+					Location of the restaurant
+
+		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
+		%script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4", crossorigin:"anonymous"}
+		%script
+			window.jQuery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+		%script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyD-a47QLCgZY9RrF0Dz0BiloT7NA1XvVoM"}
+		%script{src:"js/vendor/bootstrap.js"}
+		%script{src:"js/maps.js"}
+		%script{src:"js/form_object.js"}
+		%script{src:"js/main.js"}
+		%script{src:"js/steps.js"}

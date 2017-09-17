@@ -2,3 +2,7 @@
 config.codekit
 
 *.config
+
+node_modules/*
+
+.sass-cache/*
